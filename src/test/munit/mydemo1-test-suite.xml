@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="mydemo1-test-suite.xml" />
+	<flow name="mydemo1-test-suiteFlow" doc:id="56d78d7b-87f3-4277-ab01-694de38fa88b" >
+		<flow-ref doc:name="Flow Reference" doc:id="21260be6-37f4-4124-b287-8a167a9c1879" name="mydemo1Flow"/>
+		<munit-tools:assert-that doc:name="Assert that" doc:id="60ac81e7-47a2-4086-adc3-aa44d83f6747" message="payload is null" expression="#[payload]" is="#[MunitTools::notNullValue()]"/>
+	</flow>
+
+
+</mule>
